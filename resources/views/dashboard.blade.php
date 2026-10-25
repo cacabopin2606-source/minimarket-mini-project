@@ -59,6 +59,12 @@
                     <i class="fas fa-fw fa-table"></i>
                     <span>Products</span></a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('cashier.index') }}">
+                    <i class="fas fa-fw fa-cash-register"></i>
+                    <span>Kasir</span>
+                </a>
+            </li>
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"

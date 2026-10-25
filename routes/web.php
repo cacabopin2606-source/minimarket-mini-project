@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\CashierController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -11,6 +12,9 @@ Route::get('/', function () {
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
+
+Route::get('/kasir', [CashierController::class, 'index'])
+    ->name('cashier.index');
 
 Route::resource('products', ProductController::class)->middleware('auth');
 
