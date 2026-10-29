@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CashierController;
+use App\Http\Controllers\InvoiceController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -15,6 +16,11 @@ Route::get('/dashboard', function () {
 
 Route::get('/kasir', [CashierController::class, 'index'])
     ->name('cashier.index');
+
+Route::get('/invoice/pdf', [
+    InvoiceController::class,
+    'generate'
+])->name('invoice.pdf');
 
 Route::resource('products', ProductController::class)->middleware('auth');
 
